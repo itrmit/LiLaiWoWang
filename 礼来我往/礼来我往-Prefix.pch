@@ -1,0 +1,35 @@
+//
+// Prefix header for all source files of the '礼来我往' target in the '礼来我往' project
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_4_0
+#warning "This project uses features only available in iOS SDK 4.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+    #define MR_SHORTHAND
+    #import "PMCalendar.h"
+    #import "HUDHandler.h"
+typedef NS_ENUM(NSInteger, LiLaiWoWangType)
+{
+    LilaiType,
+    WoWangType,
+    AllType
+};
+#endif
+
+
+#define DEBUG_LOG 1
+
+#if (DEBUG_LOG == 1)
+#define XLOG(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
+#else
+#define XLOG(...) {}
+#endif
+
+#import "CoreData+MagicalRecord.h"
+#import "GTHelper.h"
